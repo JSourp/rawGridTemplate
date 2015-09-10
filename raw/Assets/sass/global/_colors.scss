@@ -1,0 +1,52 @@
+﻿//color palette:
+$base:#ff6600;
+//$complement1: adjust-hue($base, 180);
+//$complement2: darken(adjust-hue($base, 180), 5%);
+$lighten1: lighten($base, 15%);
+$lighten2: lighten($base, 30%);
+
+
+$complement1: adjust_hue($base, 90);
+$complement2: adjust-hue($base, 120);
+$complement3: adjust-hue($base, 180);
+$complement4: adjust-hue($base, 240);
+$complement5: adjust-hue($base, 270);
+
+//five complementary colours (i.e., hue +0.25, +0.33, +0.50, +0.66, +0.75)
+
+//shades
+$Black: #000;
+$BlackShadow: lighten($Black, 15%);
+$DarkGrey: #3E3E3E;
+$MediumGrey: #71777d;
+$LightGrey: #999;
+$VeryLightGrey: #f1f0f0;
+$White: #fff;
+
+//other colors
+$blue: #0099cc;
+$lightBlue: lighten($blue, 15%);
+$darkBlue: darken($blue, 15%);
+$orange: #ff6600;
+$lightOrange: lighten($orange, 15%);
+$darkOrange: darken($orange, 15%);
+$green: #339966;
+$lightGreen: lighten($green, 15%);
+$darkGreen: darken($green, 15%);
+$red: #ff3333;
+$lightRed: lighten($red, 15%);
+$darkRed: darken($red, 15%);
+
+.color1, .color2, .color3, .color4, .color5 {min-height:100px;}
+
+.color1 {background-color:$base;}
+.color2 {background-color:$complement1;}
+.color3 {background-color:$complement2;}
+.color4 {background-color:$complement3;}
+.color5 {background-color:$complement4;}
+.grey {background-color:$LightGrey;}
+
+/* SAMPLE */
+/*body {color:@MediumGrey; background-image: url('@{ImgPathGlobal}/background.jpg');font: normal 0.813em @FontFamily2;}*/
+/*.reflection {text-shadow: 1px 1px 1px @BlackShadow;border-bottom: 12px solid fade(@MediumGrey, 20%);}*/
+/*.social li a strong { text-shadow:1px 1px 0 fade(@Black, 75%); background-color:fade(@Black, 70%); box-shadow: 0 0 5px fade(@Black, 50%)}*/

@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="page.master.cs" Inherits="raw.page" %>
+
+<%@ Register Src="~/controls/Header.ascx" TagName="ctrlHeader" TagPrefix="js"%>
+<%@ Register Src="~/controls/Footer.ascx" TagName="ctrlFooter" TagPrefix="js"%>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%--<meta charset="UTF-8" />--%>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <%--<meta name="description" content="My portfolio" />
+    <meta name="keywords" content="Web Developer Portfolio " />
+    <meta name="author" content="Jonathan Sourp, Jon Sourp" />--%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%-- Favicons --%>
+    <%--<link rel="shortcut icon" href="Assets/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-72x72.png" />--%>
+    <%--<link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-144x144.png" />--%>
+    <%--<link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-76x76.png" />--%>
+    <%--<link rel="apple-touch-icon" href="Assets/img/favicons/apple-touch-icon-152x152.png" />--%>
+    <%--<link rel="icon" type="image/png" href="Assets/img/favicons/favicon-196x196.png" />--%>
+    <%--<link rel="icon" type="image/png" href="Assets/img/favicons/favicon-160x160.png" />
+    <link rel="icon" type="image/png" href="Assets/img/favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" href="Assets/img/favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" href="Assets/img/favicons/favicon-32x32.png" />
+    <meta name="msapplication-TileColor" content="#323232" />
+    <meta name="msapplication-TileImage" content="Assets/img/favicons/mstile-144x144.png" />
+    <meta name="msapplication-config" content="Assets/img/favicons/browserconfig.xml" />--%>
+    
+    <link rel="stylesheet" href="Assets/css/global.css" />
+    
+    <%--for active navigation style--%>
+    <script type="text/javascript">
+        function setActive(id) {
+            document.getElementById(id).className = "activeTab";
+            document.getElementById(id).setAttribute('class', 'activeTab');
+        }
+    </script>
+
+    <asp:ContentPlaceHolder id="scriptPH" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form method="post" action="#" id="form1" runat="server">
+        <div class="reflection">
+            <div id="header">
+                <js:ctrlHeader id="ctrlHeader1" runat="server" />
+                <asp:ContentPlaceHolder ID="headerPH" runat="server">
+                    <!--Header holder-->
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <hr />
+
+            <div id="content">
+                <asp:ContentPlaceHolder ID="mainContentPH" runat="server">
+                    <!--Main Content holder-->
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <js:ctrlFooter id="ctrlFooter1" runat="server" />
+            <asp:ContentPlaceHolder ID="footerPH" runat="server">
+                <!--Footer holder-->
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <%--Defer loading of javascript, wait for the entire document to load, then load the external file.--%>
+    <%--<script type="text/javascript">
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "Assets/js/animate.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>--%>
+    
+    <asp:ContentPlaceHolder id="scriptFtPH" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</body>
+</html>
